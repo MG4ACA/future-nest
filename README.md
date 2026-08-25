@@ -84,10 +84,10 @@ The current deployment target is a Hostinger KVM1 VPS:
 
 1. Push changes to this repository.
 2. SSH into the VPS.
-3. Pull the approved commit in `/var/www/future-nest`.
-4. Run `npm ci`.
-5. Run `npm run generate`.
-6. Serve `.output/public` through Nginx.
+3. Build locally with the supported Node.js version.
+4. Commit `.output/public` to this repository.
+5. Pull the approved commit in `/var/www/future-nest`.
+6. Serve the committed `.output/public` through Nginx.
 7. Reload Nginx after validating its configuration.
 
 See the workspace-level [Hostinger deployment guide](../HOSTINGER_VPS_DEPLOYMENT.md) for DNS, Nginx, HTTPS, and deployment commands.

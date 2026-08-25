@@ -1,0 +1,91 @@
+/* Shared design tokens and base styles used across every FutureNest page. */
+:root {
+  --ink: #17211f;
+  --muted: #62706b;
+  --paper: #f4f1e9;
+  --paper-raised: #ffffff;
+  --warm: #d96d45;
+  --line: rgba(23, 33, 31, 0.16);
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-serif);
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 20px;
+  color: var(--warm);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.primary-link {
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ink);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.section-heading h2 {
+  max-width: 530px;
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 4.3rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 700px) {
+  .page-shell {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading h2 {
+    margin-top: 24px;
+  }
+}

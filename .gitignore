@@ -4,6 +4,9 @@
 .nitro
 .cache
 dist
+.output/*
+!.output/public/
+!.output/public/**
 
 # Node dependencies
 node_modules

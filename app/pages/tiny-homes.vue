@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getCategory } from '~/data/categories';
 
-const category = getCategory('smart-home')!;
+const category = getCategory('tiny-homes')!;
 
 useSeoMeta({
   title: `${category.title} | FutureNest`,

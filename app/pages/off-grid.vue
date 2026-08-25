@@ -1,16 +1,112 @@
+<script setup lang="ts">
+import { getCategory } from '~/data/categories';
+
+const category = getCategory('off-grid')!;
+
+useSeoMeta({
+  title: `${category.title} | FutureNest`,
+  description: category.description,
+});
+
+const upcomingArticles = [
+  {
+    title: 'Off-grid Gadgets Worth Comparing',
+    description: 'A practical comparison of power, water, and lighting tools for going off-grid.',
+  },
+  {
+    title: 'Solar Setups for a Small Home',
+    description: 'What to weigh before choosing a first solar or battery setup.',
+  },
+  {
+    title: 'The Off-grid Home Checklist',
+    description: 'The essentials to plan for before a longer stay away from the grid.',
+  },
+];
+</script>
+
 <template>
-  <main class="placeholder-page">
-    <NuxtLink to="/">FutureNest</NuxtLink>
-    <p class="eyebrow">Coming soon</p>
-    <h1>Off-grid living</h1>
-    <p>Practical systems and ideas for living with more resilience and less waste.</p>
-  </main>
+  <div class="page-shell">
+    <SiteHeader />
+
+    <section
+      class="category-hero"
+      :style="{ '--tint': category.accent }"
+      aria-labelledby="category-title"
+    >
+      <p class="eyebrow">Category {{ category.number }}</p>
+      <h1 id="category-title">{{ category.title }}</h1>
+      <p class="category-copy">{{ category.description }}</p>
+    </section>
+
+    <section class="articles-section" aria-labelledby="articles-title">
+      <div class="section-heading">
+        <p class="eyebrow">In progress</p>
+        <h2 id="articles-title">What we're building next.</h2>
+      </div>
+      <p class="disclosure">
+        These articles are still in research. We publish product recommendations only after
+        verifying claims, pricing, and availability.
+      </p>
+      <div class="article-grid">
+        <ArticleCard
+          v-for="article in upcomingArticles"
+          :key="article.title"
+          :title="article.title"
+          :description="article.description"
+          :accent="category.accent"
+        />
+      </div>
+    </section>
+
+    <SiteFooter />
+  </div>
 </template>
 
 <style scoped>
-.placeholder-page { max-width: 720px; margin: 0 auto; padding: 12vh 24px; font-family: Georgia, "Times New Roman", serif; }
-.placeholder-page a { color: #17211f; font-family: Arial, sans-serif; font-weight: 700; text-decoration: none; }
-.eyebrow { margin-top: 120px; color: #d96d45; font-family: Arial, sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 400; line-height: 0.95; }
-p:last-child { max-width: 420px; color: #62706b; font-size: 1.2rem; line-height: 1.5; }
+.category-hero {
+  max-width: 720px;
+  padding: 110px 0 80px;
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.category-copy {
+  max-width: 480px;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.articles-section {
+  padding-top: 60px;
+  padding-bottom: 120px;
+  border-top: 1px solid var(--line);
+}
+
+.disclosure {
+  max-width: 620px;
+  margin: -20px 0 40px;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
