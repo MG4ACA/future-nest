@@ -1,27 +1,18 @@
 <script setup lang="ts">
+import { getArticlesByCategory } from '~/data/articles';
 import { getCategory } from '~/data/categories';
 
 const category = getCategory('off-grid')!;
+const articles = getArticlesByCategory(category.slug);
+
+const productPlaceholders =
+  articles.find((article) => article.slug === 'off-grid-gadgets-worth-comparing')?.productIdeas ??
+  [];
 
 useSeoMeta({
   title: `${category.title} | FutureNest`,
   description: category.description,
 });
-
-const upcomingArticles = [
-  {
-    title: 'Off-grid Gadgets Worth Comparing',
-    description: 'A practical comparison of power, water, and lighting tools for going off-grid.',
-  },
-  {
-    title: 'Solar Setups for a Small Home',
-    description: 'What to weigh before choosing a first solar or battery setup.',
-  },
-  {
-    title: 'The Off-grid Home Checklist',
-    description: 'The essentials to plan for before a longer stay away from the grid.',
-  },
-];
 </script>
 
 <template>
@@ -49,10 +40,35 @@ const upcomingArticles = [
       </p>
       <div class="article-grid">
         <ArticleCard
-          v-for="article in upcomingArticles"
-          :key="article.title"
+          v-for="article in articles"
+          :key="article.slug"
           :title="article.title"
-          :description="article.description"
+          :description="article.summary"
+          :status="article.status"
+          :to="`/article/${article.slug}`"
+          :read-time="article.readTime"
+          :accent="category.accent"
+        />
+      </div>
+    </section>
+
+    <section class="products-section" aria-labelledby="products-title">
+      <div class="section-heading">
+        <p class="eyebrow">Product module</p>
+        <h2 id="products-title">Reusable product-card placeholders.</h2>
+      </div>
+      <div class="product-grid">
+        <ProductCard
+          v-for="product in productPlaceholders"
+          :key="product.id"
+          :title="product.title"
+          :category="product.category"
+          :price-range="product.priceRange"
+          :merchant-status="product.merchantStatus"
+          :description="product.description"
+          :cta-label="product.ctaLabel"
+          :href="product.href"
+          :enabled="product.enabled"
           :accent="category.accent"
         />
       </div>
@@ -85,7 +101,7 @@ h1 {
 
 .articles-section {
   padding-top: 60px;
-  padding-bottom: 120px;
+  padding-bottom: 80px;
   border-top: 1px solid var(--line);
 }
 
@@ -104,8 +120,24 @@ h1 {
   gap: 24px;
 }
 
+.products-section {
+  padding-top: 50px;
+  padding-bottom: 120px;
+  border-top: 1px solid var(--line);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
 @media (max-width: 900px) {
   .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
     grid-template-columns: 1fr;
   }
 }
