@@ -1,2 +1,4 @@
 User-Agent: *
 Disallow:
+
+Sitemap: https://future.lumicore-labs.com/sitemap.xml
