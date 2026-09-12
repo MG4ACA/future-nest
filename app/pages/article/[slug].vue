@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import { getArticle } from '~/data/articles';
 import { getCategory } from '~/data/categories';
 
@@ -13,6 +13,15 @@ if (!article.value) {
     statusMessage: 'Article not found',
   });
 }
+
+const { gtag } = useGtag();
+
+onMounted(() => {
+  gtag('event', 'article_view', {
+    article_slug: slug.value,
+    category: article.value?.categorySlug
+  });
+});
 
 const category = computed(() => getCategory(article.value!.categorySlug));
 const accent = computed(() => category.value?.accent ?? '#4f6d5a');

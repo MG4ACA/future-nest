@@ -28,6 +28,17 @@ const merchantLabels: Record<MerchantStatus, string> = {
   shortlisted: 'Merchant shortlisted',
   verified: 'Merchant verified',
 };
+
+const route = useRoute();
+const { gtag } = useGtag();
+
+function onProductClick() {
+  gtag('event', 'product_click', {
+    product_id: props.title,
+    article_slug: String(route.params.slug ?? 'unknown'),
+    merchant: props.merchantStatus
+  });
+}
 </script>
 
 <template>
@@ -48,6 +59,7 @@ const merchantLabels: Record<MerchantStatus, string> = {
           :href="href"
           target="_blank"
           rel="noopener noreferrer"
+          @click="onProductClick"
         >
           {{ ctaLabel }}
         </a>
