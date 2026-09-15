@@ -22,6 +22,8 @@ export interface Article {
   status: ArticleStatus;
   readTime?: string;
   lastUpdated?: string;
+  /** Long-form paragraphs rendered on the article page. Omitted while an article is coming-soon. */
+  body?: string[];
   productIdeas?: ProductPlaceholder[];
 }
 
@@ -35,6 +37,13 @@ const articles: Article[] = [
     status: 'published',
     readTime: '8 min read',
     lastUpdated: '2026-08-26',
+    body: [
+      "Most off-grid gear pages compare price, not the numbers that decide whether a tool actually works for your setup. Before you buy anything, you need three figures: real output under load, cycle life, and how the product behaves in the specific climate and use case you have — not the manufacturer's best-case spec sheet.",
+      'Portable power stations are rated in watt-hours, but usable capacity drops with age, temperature, and inverter efficiency. Ask for the depth-of-discharge figure and the warranty cycle count, not just the headline capacity number. A 500Wh unit rated for 500 cycles at 80% capacity will outlast a 600Wh unit rated for 300 cycles.',
+      'Gravity water filtration kits live or die on cartridge lifespan and whether replacements are actually stocked where you live. A filter rated for 1,500 gallons sounds generous until you check the flow rate drops off well before that number in real use.',
+      'Rechargeable area lighting is the easiest category to get right: prioritize a stated lumen-output curve over time, not just a peak-brightness number, and check the IP rating if the light will ever sit outside.',
+      "We're building comparison tables for each category as we verify real specs and current pricing. Product links go live only after we've confirmed availability and an affiliate relationship exists — nothing here is a paid placement yet.",
+    ],
     productIdeas: [
       {
         id: 'portable-power-station',
@@ -85,6 +94,104 @@ const articles: Article[] = [
     summary: 'A decision checklist for shelter, power, water, communications, and backup plans.',
     status: 'coming-soon',
     readTime: '6 min read',
+  },
+  {
+    slug: 'tiny-home-technologies-that-make-small-spaces-work',
+    categorySlug: 'tiny-homes',
+    title: '12 Tiny-Home Technologies That Make Small Spaces Work',
+    summary:
+      'The systems and fittings that let a small footprint function like a full-size home, not a compromise.',
+    status: 'published',
+    readTime: '9 min read',
+    lastUpdated: '2026-09-15',
+    body: [
+      'A tiny home stops feeling small when the systems inside it are chosen for the footprint, not shrunk down from a full-size house. The layouts that work best combine a handful of dual-purpose fittings with a few pieces of technology that quietly do the job of two or three appliances.',
+      'Start with climate: a single mini-split heat pump sized correctly for the square footage will out-perform a window unit and a space heater combined, and it does it on a fraction of the power draw, which matters if any part of the home runs on stored or solar power.',
+      'In the kitchen, an induction cooktop paired with compact ventilation frees up the counter and cabinet space a gas range and hood would take, and it runs safely in a space where clearance is tight. Combination washer-dryer units solve the same problem for the utility side of the home.',
+      'Storage technology matters as much as appliances: hydraulic lift beds, stair-integrated drawers, and fold-flat furniture are the difference between a home that feels cramped and one that feels considered. The best tiny-home builds treat storage as a system to design, not a gap to fill afterward.',
+      "We're verifying pricing and real-world durability on each category below before linking to specific products. Merchant links go live only once we've confirmed availability and an affiliate relationship exists.",
+    ],
+    productIdeas: [
+      {
+        id: 'mini-split-heat-pump',
+        title: 'Compact Mini-Split Heat Pump',
+        category: 'Climate control',
+        priceRange: '$600 - $1,800',
+        merchantStatus: 'unverified',
+        description: 'Size against square footage and insulation, not just the marketed room count.',
+        ctaLabel: 'Merchant pending',
+        enabled: false,
+      },
+      {
+        id: 'induction-cooktop',
+        title: 'Two-Burner Induction Cooktop',
+        category: 'Kitchen',
+        priceRange: '$120 - $350',
+        merchantStatus: 'shortlisted',
+        description: 'Compare wattage draw and pan compatibility before committing to a model.',
+        ctaLabel: 'Price check',
+        enabled: false,
+      },
+      {
+        id: 'hydraulic-lift-bed',
+        title: 'Hydraulic Lift-Storage Bed Frame',
+        category: 'Storage furniture',
+        priceRange: '$400 - $1,200',
+        merchantStatus: 'unverified',
+        description: 'Check lift capacity and mattress-thickness limits against your actual mattress.',
+        ctaLabel: 'Merchant pending',
+        enabled: false,
+      },
+    ],
+  },
+  {
+    slug: 'quiet-smart-home-upgrades-worth-trying',
+    categorySlug: 'smart-home',
+    title: '7 Quiet Smart-Home Upgrades Worth Trying',
+    summary:
+      'Small, considered automation that lowers a bill or removes a chore without adding a new app to babysit.',
+    status: 'published',
+    readTime: '7 min read',
+    lastUpdated: '2026-09-15',
+    body: [
+      "The smart-home upgrades worth having are the ones you stop thinking about within a week. That usually means a small number of well-chosen devices working on a stable local network, not a shelf of gadgets that all want their own app.",
+      'A smart thermostat with real occupancy sensing pays for itself through the heating and cooling bill alone, and the payback is measurable within a season rather than a guess. Look for local scheduling that still works if the internet connection drops.',
+      'Energy-monitoring smart plugs on a handful of high-draw devices (the kettle, the dryer, an older fridge) turn a vague utility bill into a number you can act on. This is the cheapest upgrade on the list and the one with the clearest evidence.',
+      'A video doorbell with local storage avoids the recurring subscription fee that most cloud-only models require, and it solves the actual problem most people buy one for: knowing who is at the door without a subscription.',
+      "We're testing each category for reliability and total cost of ownership, including subscription fees, before recommending specific models here.",
+    ],
+    productIdeas: [
+      {
+        id: 'smart-thermostat',
+        title: 'Occupancy-Sensing Smart Thermostat',
+        category: 'Climate control',
+        priceRange: '$130 - $280',
+        merchantStatus: 'shortlisted',
+        description: 'Confirm local scheduling works without an internet connection before buying.',
+        ctaLabel: 'Price check',
+        enabled: false,
+      },
+      {
+        id: 'energy-monitoring-plug',
+        title: 'Energy-Monitoring Smart Plug (3-pack)',
+        category: 'Energy monitoring',
+        priceRange: '$35 - $70',
+        merchantStatus: 'verified',
+        description: 'Best entry point \u2014 low cost, immediate and measurable bill feedback.',
+        ctaLabel: 'See tested options',
+        enabled: false,
+      },
+      {
+        id: 'video-doorbell-local-storage',
+        title: 'Video Doorbell (Local Storage)',
+        category: 'Home security',
+        priceRange: '$100 - $220',
+        merchantStatus: 'unverified',
+        description: 'Check subscription requirements carefully \u2014 many advertised prices exclude storage fees.',
+        ctaLabel: 'Merchant pending',
+        enabled: false,
+      },
+    ],
   },
 ];
 

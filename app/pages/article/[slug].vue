@@ -51,17 +51,26 @@ useSeoMeta(() => ({
 
     <section class="body-section" aria-labelledby="body-title">
       <div class="section-heading">
-        <p class="eyebrow">Structure</p>
-        <h2 id="body-title">Article route is now live.</h2>
+        <p class="eyebrow">{{ article?.body?.length ? 'Guide' : 'Structure' }}</p>
+        <h2 id="body-title">
+          {{ article?.body?.length ? 'What to know before you buy.' : 'Article route is now live.' }}
+        </h2>
       </div>
-      <p class="body-copy">
-        This page is intentionally lightweight while validation is in progress. It provides a stable
-        URL for Pinterest and a reusable layout for long-form content.
-      </p>
-      <p class="body-copy">
-        Next, each article can be expanded with tested recommendations, diagrams, and updated
-        pricing.
-      </p>
+      <template v-if="article?.body?.length">
+        <p v-for="(paragraph, index) in article.body" :key="index" class="body-copy">
+          {{ paragraph }}
+        </p>
+      </template>
+      <template v-else>
+        <p class="body-copy">
+          This page is intentionally lightweight while validation is in progress. It provides a stable
+          URL for Pinterest and a reusable layout for long-form content.
+        </p>
+        <p class="body-copy">
+          Next, each article can be expanded with tested recommendations, diagrams, and updated
+          pricing.
+        </p>
+      </template>
     </section>
 
     <section
