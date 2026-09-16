@@ -17,6 +17,8 @@ export const categories: Category[] = [
     number: '01',
     description: 'Resilient energy, water, and shelter systems for living with less.',
     accent: '#4f6d5a',
+    image: '/images/off-grid/hero.jpeg',
+    imageAlt: 'Solar panels on a wooden cabin roof in a pine forest clearing at golden hour',
   },
   {
     slug: 'smart-home',
@@ -24,6 +26,8 @@ export const categories: Category[] = [
     number: '02',
     description: 'Quiet technology and considered upgrades for everyday spaces.',
     accent: '#3f5770',
+    image: '/images/smart-home/hero.jpeg',
+    imageAlt: 'Minimal modern living room with a smart thermostat glowing softly at dusk',
   },
   {
     slug: 'tiny-homes',
@@ -31,6 +35,8 @@ export const categories: Category[] = [
     number: '03',
     description: 'Small-footprint layouts and ideas that make compact living feel spacious.',
     accent: '#7a6a4f',
+    image: '/images/tiny-homes/hero.jpeg',
+    imageAlt: 'Beautifully organised tiny home interior with compact kitchen and fold-flat furniture',
   },
   {
     slug: 'pet-wellness',
@@ -39,6 +45,8 @@ export const categories: Category[] = [
     description:
       'Eco-conscious tech and considered products for a healthier, calmer home with pets.',
     accent: '#5c6b4f',
+    image: '/images/pet-wellness/hero.jpeg',
+    imageAlt: 'Modern home interior with automatic pet feeder and compact air purifier on shelving',
   },
   {
     slug: 'halloween',

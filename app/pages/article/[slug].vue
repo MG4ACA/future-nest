@@ -51,10 +51,10 @@ useSeoMeta(() => ({
 
     <section class="body-section" aria-labelledby="body-title">
       <div class="section-heading">
-        <p class="eyebrow">{{ article?.body?.length ? 'Guide' : 'Structure' }}</p>
+        <p class="eyebrow">{{ article?.body?.length ? 'Guide' : 'Coming soon' }}</p>
         <h2 id="body-title">
           {{
-            article?.body?.length ? 'What to know before you buy.' : 'Article route is now live.'
+            article?.body?.length ? 'What to know before you buy.' : 'Full guide in progress.'
           }}
         </h2>
       </div>
@@ -65,12 +65,8 @@ useSeoMeta(() => ({
       </template>
       <template v-else>
         <p class="body-copy">
-          This page is intentionally lightweight while validation is in progress. It provides a
-          stable URL for Pinterest and a reusable layout for long-form content.
-        </p>
-        <p class="body-copy">
-          Next, each article can be expanded with tested recommendations, diagrams, and updated
-          pricing.
+          We're currently researching and writing this guide. Come back soon for our
+          detailed breakdown, product comparisons, and honest recommendations.
         </p>
       </template>
     </section>
@@ -81,8 +77,8 @@ useSeoMeta(() => ({
       aria-labelledby="products-title"
     >
       <div class="section-heading">
-        <p class="eyebrow">Placeholder products</p>
-        <h2 id="products-title">Reusable card slots for recommendations.</h2>
+        <p class="eyebrow">Products we're researching</p>
+        <h2 id="products-title">Coming soon — links verified before they go live.</h2>
       </div>
       <div class="product-grid">
         <ProductCard

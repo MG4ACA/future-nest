@@ -7,21 +7,31 @@
   </url>
   <url>
     <loc>https://future.lumicore-labs.com/off-grid</loc>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://future.lumicore-labs.com/smart-home</loc>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://future.lumicore-labs.com/tiny-homes</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://future.lumicore-labs.com/pet-wellness</loc>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://future.lumicore-labs.com/halloween</loc>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -33,6 +43,24 @@
   <url>
     <loc>https://future.lumicore-labs.com/article/off-grid-gadgets-worth-comparing</loc>
     <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://future.lumicore-labs.com/article/tiny-home-technologies-that-make-small-spaces-work</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://future.lumicore-labs.com/article/quiet-smart-home-upgrades-worth-trying</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://future.lumicore-labs.com/article/smart-pet-tech-worth-the-money</loc>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -57,3 +85,4 @@
     <priority>0.2</priority>
   </url>
 </urlset>
+

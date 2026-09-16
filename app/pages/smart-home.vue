@@ -27,16 +27,23 @@ useSeoMeta({
       <p class="eyebrow">Category {{ category.number }}</p>
       <h1 id="category-title">{{ category.title }}</h1>
       <p class="category-copy">{{ category.description }}</p>
+      <img
+        v-if="category.image"
+        :src="category.image"
+        :alt="category.imageAlt"
+        class="category-image"
+        loading="eager"
+      />
     </section>
 
     <section class="articles-section" aria-labelledby="articles-title">
       <div class="section-heading">
-        <p class="eyebrow">In progress</p>
-        <h2 id="articles-title">What we're building next.</h2>
+        <p class="eyebrow">Guides</p>
+        <h2 id="articles-title">Smart upgrades worth reading about.</h2>
       </div>
       <p class="disclosure">
-        These articles are still in research. We publish product recommendations only after
-        verifying claims, pricing, and availability.
+        We research each product category thoroughly before recommending anything. Links go live
+        once we've verified pricing, real-world performance, and availability.
       </p>
       <div class="article-grid">
         <ArticleCard
@@ -54,8 +61,8 @@ useSeoMeta({
 
     <section class="products-section" aria-labelledby="products-title">
       <div class="section-heading">
-        <p class="eyebrow">Product module</p>
-        <h2 id="products-title">Reusable product-card placeholders.</h2>
+        <p class="eyebrow">Products we're researching</p>
+        <h2 id="products-title">Coming soon — links verified before they go live.</h2>
       </div>
       <div class="product-grid">
         <ProductCard
@@ -97,6 +104,17 @@ h1 {
   color: var(--muted);
   font-size: 1.15rem;
   line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.category-image {
+  width: 100%;
+  max-width: 860px;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  display: block;
 }
 
 .articles-section {
