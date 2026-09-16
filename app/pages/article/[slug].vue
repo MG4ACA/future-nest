@@ -19,7 +19,7 @@ const { gtag } = useGtag();
 onMounted(() => {
   gtag('event', 'article_view', {
     article_slug: slug.value,
-    category: article.value?.categorySlug
+    category: article.value?.categorySlug,
   });
 });
 
@@ -53,7 +53,9 @@ useSeoMeta(() => ({
       <div class="section-heading">
         <p class="eyebrow">{{ article?.body?.length ? 'Guide' : 'Structure' }}</p>
         <h2 id="body-title">
-          {{ article?.body?.length ? 'What to know before you buy.' : 'Article route is now live.' }}
+          {{
+            article?.body?.length ? 'What to know before you buy.' : 'Article route is now live.'
+          }}
         </h2>
       </div>
       <template v-if="article?.body?.length">
@@ -63,8 +65,8 @@ useSeoMeta(() => ({
       </template>
       <template v-else>
         <p class="body-copy">
-          This page is intentionally lightweight while validation is in progress. It provides a stable
-          URL for Pinterest and a reusable layout for long-form content.
+          This page is intentionally lightweight while validation is in progress. It provides a
+          stable URL for Pinterest and a reusable layout for long-form content.
         </p>
         <p class="body-copy">
           Next, each article can be expanded with tested recommendations, diagrams, and updated

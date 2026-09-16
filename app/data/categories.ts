@@ -33,9 +33,17 @@ export const categories: Category[] = [
     accent: '#7a6a4f',
   },
   {
+    slug: 'pet-wellness',
+    title: 'Smart Pet Wellness',
+    number: '04',
+    description:
+      'Eco-conscious tech and considered products for a healthier, calmer home with pets.',
+    accent: '#5c6b4f',
+  },
+  {
     slug: 'halloween',
     title: 'Halloween Home Decor & DIY',
-    number: '04',
+    number: '05',
     description: 'Warm, modern styling ideas for a home that feels alive this season.',
     accent: '#c05621',
     image: '/images/halloween/porch-ideas.jpeg',
