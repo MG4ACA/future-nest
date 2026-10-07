@@ -40,7 +40,7 @@ useSeoMeta({
 }
 
 h1 {
-  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 400;
   line-height: 0.95;
   letter-spacing: -0.03em;
@@ -52,7 +52,7 @@ h1 {
   color: var(--muted);
   font-size: 1.15rem;
   line-height: 1.5;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .category-image {

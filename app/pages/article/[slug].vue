@@ -126,12 +126,12 @@ useSeoMeta(() => ({
 <style scoped>
 .article-hero {
   max-width: 760px;
-  padding: 120px 0 88px;
+  padding: 60px 0 40px;
 }
 
 h1 {
   margin-bottom: 24px;
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
   font-weight: 400;
   line-height: 0.94;
   letter-spacing: -0.03em;
@@ -174,7 +174,7 @@ h1 {
 .hero-image-wrap {
   width: 100%;
   max-width: 900px;
-  margin-bottom: 72px;
+  margin-bottom: 40px;
 }
 
 .hero-image {
@@ -187,8 +187,8 @@ h1 {
 
 /* Body */
 .body-section {
-  padding-top: 62px;
-  padding-bottom: 78px;
+  padding-top: 40px;
+  padding-bottom: 60px;
   border-top: 1px solid var(--line);
 }
 
@@ -224,8 +224,8 @@ h1 {
 
 /* Products */
 .products-section {
-  padding-top: 54px;
-  padding-bottom: 120px;
+  padding-top: 40px;
+  padding-bottom: 60px;
   border-top: 1px solid var(--line);
 }
 

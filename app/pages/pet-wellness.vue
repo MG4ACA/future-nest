@@ -87,11 +87,11 @@ useSeoMeta({
 <style scoped>
 .category-hero {
   max-width: 720px;
-  padding: 110px 0 80px;
+  padding: 60px 0 40px;
 }
 
 h1 {
-  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 400;
   line-height: 0.95;
   letter-spacing: -0.03em;
@@ -103,7 +103,7 @@ h1 {
   color: var(--muted);
   font-size: 1.15rem;
   line-height: 1.5;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .category-image {
@@ -117,8 +117,8 @@ h1 {
 }
 
 .articles-section {
-  padding-top: 60px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 60px;
   border-top: 1px solid var(--line);
 }
 
@@ -138,8 +138,8 @@ h1 {
 }
 
 .products-section {
-  padding-top: 50px;
-  padding-bottom: 120px;
+  padding-top: 40px;
+  padding-bottom: 60px;
   border-top: 1px solid var(--line);
 }
 
@@ -150,6 +150,9 @@ h1 {
 }
 
 @media (max-width: 900px) {
+  .category-hero {
+    padding: 40px 0 30px;
+  }
   .article-grid {
     grid-template-columns: 1fr;
   }

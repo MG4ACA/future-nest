@@ -85,13 +85,13 @@ const galleryImages = [
 <style scoped>
 .hero {
   max-width: 780px;
-  padding: 150px 0 170px;
+  padding: 80px 0 60px;
 }
 
 h1 {
   max-width: 760px;
-  margin-bottom: 28px;
-  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  margin-bottom: 24px;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 400;
   line-height: 0.94;
   letter-spacing: -0.04em;
@@ -106,7 +106,7 @@ h1 {
 }
 
 .explore-section {
-  padding: 70px 0 120px;
+  padding: 50px 0 70px;
   border-top: 1px solid var(--line);
 }
 
@@ -117,8 +117,8 @@ h1 {
 }
 
 .seasonal-section {
-  padding-top: 70px;
-  padding-bottom: 120px;
+  padding-top: 50px;
+  padding-bottom: 70px;
   border-top: 1px solid var(--line);
 }
 
@@ -138,12 +138,12 @@ h1 {
 
 .about-section {
   max-width: 640px;
-  padding: 90px 0;
+  padding: 60px 0;
   border-top: 1px solid var(--line);
 }
 
 .about-section h2 {
-  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
 }
 
 @media (max-width: 900px) {
@@ -158,11 +158,11 @@ h1 {
 
 @media (max-width: 700px) {
   .hero {
-    padding: 100px 0 110px;
+    padding: 60px 0 50px;
   }
 
   h1 {
-    font-size: clamp(3.2rem, 17vw, 6rem);
+    font-size: clamp(2.2rem, 12vw, 3.5rem);
   }
 
   .topic-grid {
