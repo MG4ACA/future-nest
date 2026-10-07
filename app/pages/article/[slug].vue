@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue';
-import { getArticle } from '~/data/articles';
+import { getArticle, isImageBlock } from '~/data/articles';
 import { getCategory } from '~/data/categories';
 
 const route = useRoute();
@@ -49,6 +49,17 @@ useSeoMeta(() => ({
       </div>
     </section>
 
+    <!-- Hero image -->
+    <div v-if="article?.heroImage" class="hero-image-wrap">
+      <img
+        :src="article.heroImage.src"
+        :alt="article.heroImage.alt"
+        class="hero-image"
+        loading="lazy"
+      />
+      <p v-if="article.heroImage.caption" class="image-caption">{{ article.heroImage.caption }}</p>
+    </div>
+
     <section class="body-section" aria-labelledby="body-title">
       <div class="section-heading">
         <p class="eyebrow">{{ article?.body?.length ? 'Guide' : 'Coming soon' }}</p>
@@ -59,9 +70,20 @@ useSeoMeta(() => ({
         </h2>
       </div>
       <template v-if="article?.body?.length">
-        <p v-for="(paragraph, index) in article.body" :key="index" class="body-copy">
-          {{ paragraph }}
-        </p>
+        <template v-for="(block, index) in article.body" :key="index">
+          <!-- Inline image block -->
+          <figure v-if="isImageBlock(block)" class="inline-figure">
+            <img
+              :src="block.src"
+              :alt="block.alt"
+              class="inline-image"
+              loading="lazy"
+            />
+            <figcaption v-if="block.caption" class="image-caption">{{ block.caption }}</figcaption>
+          </figure>
+          <!-- Paragraph -->
+          <p v-else class="body-copy">{{ block }}</p>
+        </template>
       </template>
       <template v-else>
         <p class="body-copy">
@@ -148,6 +170,22 @@ h1 {
   font-size: 0.76rem;
 }
 
+/* Hero image */
+.hero-image-wrap {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 72px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Body */
 .body-section {
   padding-top: 62px;
   padding-bottom: 78px;
@@ -161,6 +199,30 @@ h1 {
   line-height: 1.65;
 }
 
+/* Inline images */
+.inline-figure {
+  margin: 48px 0;
+  max-width: 700px;
+}
+
+.inline-image {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-caption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+/* Products */
 .products-section {
   padding-top: 54px;
   padding-bottom: 120px;
