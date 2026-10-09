@@ -26,7 +26,7 @@ watch(() => route.path, () => {
         :to="`/${category.slug}`"
         :class="{ active: isActive(`/${category.slug}`) }"
       >
-        {{ category.title.split(' ')[0] === 'Halloween' ? 'Halloween' : category.title.split(' ')[0] }}
+        {{ category.shortTitle }}
       </NuxtLink>
       <NuxtLink to="/#about">About</NuxtLink>
     </nav>

@@ -40,6 +40,7 @@ useSeoMeta({
 }
 
 h1 {
+  max-width: 720px;
   font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 400;
   line-height: 0.95;

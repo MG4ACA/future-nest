@@ -2,6 +2,7 @@
 export interface Category {
   slug: string;
   title: string;
+  shortTitle: string;
   number: string;
   description: string;
   accent: string;
@@ -14,6 +15,7 @@ export const categories: Category[] = [
   {
     slug: 'off-grid',
     title: 'Off-Grid Living',
+    shortTitle: 'Off-Grid',
     number: '01',
     description: 'Resilient energy, water, and shelter systems for living with less.',
     accent: '#4f6d5a',
@@ -23,6 +25,7 @@ export const categories: Category[] = [
   {
     slug: 'smart-home',
     title: 'Smart Home',
+    shortTitle: 'Smart Home',
     number: '02',
     description: 'Quiet technology and considered upgrades for everyday spaces.',
     accent: '#3f5770',
@@ -32,6 +35,7 @@ export const categories: Category[] = [
   {
     slug: 'tiny-homes',
     title: 'Tiny Homes',
+    shortTitle: 'Tiny Homes',
     number: '03',
     description: 'Small-footprint layouts and ideas that make compact living feel spacious.',
     accent: '#7a6a4f',
@@ -41,6 +45,7 @@ export const categories: Category[] = [
   {
     slug: 'pet-wellness',
     title: 'Smart Pet Wellness',
+    shortTitle: 'Pets',
     number: '04',
     description:
       'Eco-conscious tech and considered products for a healthier, calmer home with pets.',
@@ -51,6 +56,7 @@ export const categories: Category[] = [
   {
     slug: 'halloween',
     title: 'Halloween Home Decor & DIY',
+    shortTitle: 'Halloween',
     number: '05',
     description: 'Warm, modern styling ideas for a home that feels alive this season.',
     accent: '#c05621',

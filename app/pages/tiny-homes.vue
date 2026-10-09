@@ -87,11 +87,11 @@ useSeoMeta({
 
 <style scoped>
 .category-hero {
-  max-width: 720px;
   padding: 60px 0 40px;
 }
 
 h1 {
+  max-width: 720px;
   font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 400;
   line-height: 0.95;
@@ -109,7 +109,7 @@ h1 {
 
 .category-image {
   width: 100%;
-  max-width: 860px;
+  max-width: 100%;
   height: auto;
   max-height: 480px;
   object-fit: cover;

@@ -24,9 +24,11 @@ useSeoMeta({
       :style="{ '--tint': category.accent }"
       aria-labelledby="category-title"
     >
-      <p class="eyebrow">Category {{ category.number }}</p>
-      <h1 id="category-title">{{ category.title }}</h1>
-      <p class="category-copy">{{ category.description }}</p>
+      <div class="category-header-text">
+        <p class="eyebrow">Category {{ category.number }}</p>
+        <h1 id="category-title">{{ category.title }}</h1>
+        <p class="category-copy">{{ category.description }}</p>
+      </div>
       <img
         v-if="category.image"
         :src="category.image"
@@ -87,8 +89,11 @@ useSeoMeta({
 
 <style scoped>
 .category-hero {
-  max-width: 720px;
   padding: 60px 0 40px;
+}
+
+.category-header-text {
+  max-width: 720px;
 }
 
 h1 {
@@ -109,10 +114,11 @@ h1 {
 
 .category-image {
   width: 100%;
-  max-width: 860px;
   height: auto;
-  max-height: 480px;
+  max-height: 520px;
   object-fit: cover;
+  margin-top: 48px;
+  border-radius: 8px;
   border: 1px solid var(--line);
   display: block;
 }

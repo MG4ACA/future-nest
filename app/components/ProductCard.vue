@@ -24,9 +24,9 @@ const props = withDefaults(
 );
 
 const merchantLabels: Record<MerchantStatus, string> = {
-  unverified: 'Merchant unverified',
-  shortlisted: 'Merchant shortlisted',
-  verified: 'Merchant verified',
+  unverified: 'Under Review',
+  shortlisted: "Editor's Shortlist",
+  verified: 'Tested & Verified',
 };
 
 const route = useRoute();
@@ -64,7 +64,7 @@ function onProductClick() {
           {{ ctaLabel }}
         </a>
         <button v-else class="product-cta disabled" type="button" disabled>
-          {{ ctaLabel }}
+          Sourcing best price...
         </button>
       </div>
     </div>
